@@ -31,6 +31,44 @@
     .navbar a:hover {
       text-decoration: underline;
     }
+
+  /* POPUP OVERLAY */
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6); /* dark overlay */
+  display: none;                  /* hidden by default */
+  justify-content: center;
+  align-items: center;
+}
+
+/* POPUP BOX */
+.popup-box {
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  width: 300px;
+  text-align: center;
+  font-family: Arial, sans-serif;
+}
+
+/* Close button */
+.close-btn {
+  margin-top: 10px;
+  padding: 8px 16px;
+  border: none;
+  background: #333;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.close-btn:hover {
+  background: #555;
+}
   </style>
 </head>
 
@@ -43,7 +81,7 @@
     <div class="nav-links">
       <a href="index.html">Home</a>
       <a href="#">Projects</a>
-      <a href="#">Let's Connect</a>
+      <a href="#" onclick="openPopup()">Let's Connect</a>
     </div>
   </div>
 
@@ -51,5 +89,35 @@
   <p>About me</p>
   <p>I like maps. Professionally, I am a GIS analyst. Academically, I hold a masters degree (MSc) in GIS and Remote Sensing from the University of Southampton.</p>
 
+  <!-- POPUP OVERLAY -->
+<div id="popup" class="popup-overlay" onclick="closePopup()">
+  <div class="popup-box" onclick="event.stopPropagation()">
+
+    <h2>Let's Connect</h2>
+
+    <p><strong>LinkedIn:</strong></p>
+    <a href="https://www.linkedin.com/in/christophermartyn" target="_blank">
+      www.linkedin.com/in/christophermartyn
+    </a>
+
+    <br><br>
+
+    <p><strong>Email:</strong></p>
+    <a href="mailto:chrismartyn03@gmail.com">chrismartyn03@gmail.com</a>
+
+    <br><br>
+    <button class="close-btn" onclick="closePopup()">Close</button>
+
+  </div>
+</div>
+
+  <script>
+  function openPopup() {
+    document.getElementById("popup").style.display = "flex";
+  }
+  function closePopup() {
+    document.getElementById("popup").style.display = "none";
+  }
+</script>
 </body>
 </html>

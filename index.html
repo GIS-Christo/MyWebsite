@@ -5,22 +5,47 @@
   <title>Hello!</title>
 
   <style>
-    /* Top ribbon styling */
-    .top-bar {
-      background-color: #333;   /* dark ribbon */
-      color: white;             /* white text */
-      padding: 15px 20px;       /* space around text */
-      font-size: 24px;          /* size of the text */
+    /* NAVIGATION BAR STYLING */
+    .navbar {
+      background-color: #333;        /* dark bar */
+      color: white;
+      padding: 15px 20px;
       font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: space-between;  /* text left, links right */
+      align-items: center;
+    }
+
+    .navbar .title {
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    .navbar a {
+      color: white;
+      text-decoration: none;
+      margin-left: 20px;
+      font-size: 18px;
+    }
+
+    .navbar a:hover {
+      text-decoration: underline;
     }
   </style>
 </head>
 
 <body>
 
-  <!-- The ribbon -->
-  <div class="top-bar">
-    Hi, I'm Christopher Martyn
+  <!-- NAVIGATION BAR -->
+  <div class="navbar">
+    <div class="title">Hi, I'm Christopher Martyn</div>
+
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="#">Projects</a>
+      <a href="#">Blog</a>
+      <a href="#">Contact</a>
+    </div>
   </div>
 
   <h1>Welcome to my GIS Portfolio</h1>
@@ -28,4 +53,3 @@
 
 </body>
 </html>
-

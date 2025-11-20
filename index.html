@@ -69,6 +69,38 @@
 .close-btn:hover {
   background: #555;
 }
+    /* DROPDOWN MENU */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #444;
+  min-width: 150px;
+  border-radius: 4px;
+  padding: 10px 0;
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: white;
+  padding: 10px 20px;
+  text-decoration: none;
+  display: block;
+  font-size: 16px;
+}
+
+.dropdown-content a:hover {
+  background-color: #555;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
   </style>
 </head>
 
@@ -80,7 +112,13 @@
 
     <div class="nav-links">
       <a href="index.html">Home</a>
-      <a href="#">Projects</a>
+      <div class="dropdown">
+  <a href="#">Projects ▼</a>
+  <div class="dropdown-content">
+    <a href="test.html">Test</a>
+  </div>
+</div>
+
       <a href="#" onclick="openPopup()">Let's Connect</a>
     </div>
   </div>
